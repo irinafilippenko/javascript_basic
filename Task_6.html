@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title> 
+    </head>
+    <body>
+        <script>
+            'use strict';
+            let amountMoney = prompt('Введите количество денег, которое хотите положить на счёт в банке:');
+            function lastCharRub(amountMoney) {
+                let lastNumAmountMoney = String(amountMoney).slice(-1);
+                //let lastNumAmountMoney = String(amountMoney).substring(String(amountMoney).length - 1);
+                let beforeLastNumAmountMoney = String(amountMoney).slice(-2,-1);
+                if (beforeLastNumAmountMoney === '1'){
+                    return 'ей';
+                }
+                switch (lastNumAmountMoney) {
+                    case '1':
+                        return 'ь';
+                    case '2':
+                    case '3':
+                    case '4':
+                        return 'я';
+                    default:
+                        return 'ей';
+                }
+            }
+            alert(`Ваша сумма в ${amountMoney} рубл${lastCharRub(amountMoney)} успешно зачислена.`);
+        </script>
+    </body>
+</html>
